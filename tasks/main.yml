@@ -4,3 +4,7 @@
 - name: put denyhosts.conf
   template: src=denyhosts.conf dest=/etc/denyhosts.conf backup=yes mode=640
   notify: restart denyhosts
+
+- name: put allowed-hosts
+  template: src=allowed-hosts dest=/var/lib/denyhosts/allowed-hosts backup=yes
+  notify: restart denyhosts
